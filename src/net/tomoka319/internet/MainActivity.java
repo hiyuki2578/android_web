@@ -57,7 +57,6 @@ public class MainActivity extends Activity {
         //45 爆音で名前が聞こえません 2013/03/24(日) 14:02:12.85 ID:On0YHxwv0
         //ごめん誤爆した
         //
-        //
         WebView  myWebView = (WebView) findViewById(R.id.webView);
         setupGeolocation(myWebView);
         setupWebStorage(myWebView);
