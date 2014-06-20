@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="EnableJavaScripts"
+        android:title="@string/javascript"
+        android:summary="EnableJavaScripts" />
+
+    <CheckBoxPreference
+        android:key="homepage-select"
+        android:title="Homepage-select"
+        android:summary="Homepage-select" />
+
+    <ListPreference
+        android:key="home_preference"
+        android:title="@string/homepage"
+        android:summary="HomePreference"
+        android:entries="@array/home_list"
+        android:entryValues="@array/homevalues"
+        android:dialogTitle="SelectPages" />
+
+    <EditTextPreference
+        android:key="home_Url"
+        android:title="@string/homeUrl"
+        android:summary="EnterHomeUrl"
+        android:dialogTitle="@string/homeUrl" />
+
+</PreferenceScreen>

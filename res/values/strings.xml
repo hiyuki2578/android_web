@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Web</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="quit">Quit</string>
+    <string name="Back">Back</string>
+    <string name="forward">Forward</string>
+    <string name="reload">Reload</string>
+    <string name="setting">Settings</string>
+    <string name="javascript">EnableJavaScript</string>
+    <string name="homepage">Open HomePage</string>
+    <string name="jaist_ftp">Open ftp.jaist.ac.jp</string>
+    <string name="homeUrl">Enter HomePage Url</string>
+    <string name="twitter_consumer_key">DfwswGpdyKi4BUulLPctHA</string>
+    <string name="twitter_consumer_secret">w4rOZcyInE5uItvTmB91ni1pyRECQWp3ZYbX0LntcA</string>
+    <string name="twitter_oauth">Twitterで認証</string>
+    <string name="twitter_callback_url">tomoka319://twitter</string>
+</resources>

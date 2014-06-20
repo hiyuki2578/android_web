@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_list">
+        <item>Google(Global)</item>
+        <item>Google(JP)</item>
+        <item>Yahoo(US)</item>
+        <item>Yahoo(JP)</item>
+        <item>Twitter</item>
+        <item>ftp.jaist.ac.jp</item>
+        <item>openSUSE</item>
+    </string-array>
+    <string-array name="homevalues">
+        <item>https://www.google.com</item>
+        <item>https://www.google.co.jp</item>
+        <item>https://www.yahoo.com/</item>
+        <item>http://www.yahoo.co.jp</item>
+        <item>https://www.twitter.com</item>
+        <item>http://ftp.jaist.ac.jp/pub/</item>
+        <item>http://ja.opensuse.org/</item>
+    </string-array>
+</resources>

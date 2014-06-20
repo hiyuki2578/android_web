@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="net.tomoka319.internet.MainActivity" >
+    
+    <item android:id="@+id/quit"
+        android:title="@string/quit"
+        android:orderInCategory="900"
+        android:showAsAction="never" />
+    <item android:id="@+id/back"
+        android:title="@string/Back"
+        android:orderInCategory="2"
+        android:showAsAction="never" />
+    <item android:id="@+id/forward"
+        android:title="@string/forward"
+        android:orderInCategory="1"
+        android:showAsAction="never" />
+    <item android:id="@+id/home"
+        android:title="@string/homepage"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+    <item android:id="@+id/reload"
+        android:title="@string/reload"
+        android:orderInCategory="3"
+        android:showAsAction="never" />
+    <item android:id="@+id/setting"
+        android:title="@string/setting"
+        android:orderInCategory="4"
+        android:showAsAction="never" />
+    <item android:id="@+id/jaist_ftp"
+        android:title="@string/jaist_ftp"
+        android:orderInCategory="7"
+        android:showAsAction="never" />
+</menu>
