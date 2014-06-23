@@ -18,7 +18,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import net.tomoka319.internet.R;
+import net.tomoka319.Web_brwoser.R;
 import net.tomoka319.Web_brwoser.TwitterUtils;
 
 public class TwitterOAuthActivity extends Activity {

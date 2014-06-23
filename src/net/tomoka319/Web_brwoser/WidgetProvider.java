@@ -17,8 +17,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.format.Time;
 import android.widget.RemoteViews;
-import net.tomoka319.internet.R;
-import net.tomoka319.internet.R;
+import net.tomoka319.Web_brwoser.R;
 
 public class WidgetProvider extends AppWidgetProvider {
     private static final String ACTION_WIDGET_UPDATE = "jp.co.se.android.recipe.action.ACTION_WIDGET_UPDATE";
