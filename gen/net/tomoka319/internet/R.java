@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package net.tomoka319.internet;
+package net.tomoka319.Web_brwoser;
 
 public final class R {
     public static final class array {
