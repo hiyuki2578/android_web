@@ -4,12 +4,11 @@
  * and open the template in the editor.
  */
 
-package net.tomoka319.Web_brwoser;
+package net.tomoka319.Web_browser;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
-import net.tomoka319.Web_brwoser.R;
 /**
  *
  * @author hiyuki
