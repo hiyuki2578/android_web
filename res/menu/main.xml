@@ -26,8 +26,4 @@
         android:title="@string/setting"
         android:orderInCategory="4"
         android:showAsAction="never" />
-    <item android:id="@+id/jaist_ftp"
-        android:title="@string/jaist_ftp"
-        android:orderInCategory="7"
-        android:showAsAction="never" />
 </menu>

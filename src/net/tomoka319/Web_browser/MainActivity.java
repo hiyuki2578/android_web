@@ -31,7 +31,6 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import java.io.File;
-import org.apache.http.impl.cookie.BasicClientCookie;
 
 public class MainActivity extends Activity {
 
@@ -46,7 +45,6 @@ public class MainActivity extends Activity {
         CookieManager cm = CookieManager.getInstance();
         cm.setAcceptCookie(true);
         cm.removeExpiredCookie();
-        setCookie();
         
         setContentView(R.layout.main);
         progressBar =(ProgressBar) findViewById(R.id.progressbar);
@@ -209,10 +207,6 @@ public class MainActivity extends Activity {
             Intent intent = new Intent(this, Preference.class);
             startActivity(intent);
         }
-        if (id == R.id.jaist_ftp){
-            webView.loadUrl("http://android-recipe.herokuapp.com/samples/ch08/header");
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
     @Override
@@ -295,24 +289,5 @@ public class MainActivity extends Activity {
         } else {
             
         }
-    }
-    private void setCookie(){
-        CookieManager cm = CookieManager.getInstance();
-        BasicClientCookie cookie = getSampleCookie();
-        cm.setCookie(cookie.getDomain(), toHeaderCookie(cookie));
-    }
-    private BasicClientCookie getSampleCookie(){
-        BasicClientCookie cookie = new BasicClientCookie("CookieSampleKey","CookieSampleValue");
-        cookie.setDomain("android-recipe.herokuapp.com");
-        cookie.setPath("/");
-        return cookie;
-    }
-    private String toHeaderCookie(BasicClientCookie c) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(c.getName()).append("=").append(c.getValue()).append("; ");
-        sb.append("domain").append("=").append(c.getDomain()).append("; ");
-        sb.append("path").append("=").append(c.getPath()).append("; ");
-
-        return sb.toString();
     }
 }
