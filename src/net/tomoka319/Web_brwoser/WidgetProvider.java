@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package net.tomoka319.internet;
+package net.tomoka319.Web_brwoser;
 
 /**
  *
@@ -17,6 +17,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.format.Time;
 import android.widget.RemoteViews;
+import net.tomoka319.internet.R;
 import net.tomoka319.internet.R;
 
 public class WidgetProvider extends AppWidgetProvider {

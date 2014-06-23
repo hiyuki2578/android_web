@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package net.tomoka319.internet;
+package net.tomoka319.Web_brwoser;
 
 import android.app.Activity;
 import android.os.Bundle;

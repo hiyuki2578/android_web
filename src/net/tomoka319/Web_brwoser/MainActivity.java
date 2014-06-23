@@ -1,4 +1,4 @@
-package net.tomoka319.internet;
+package net.tomoka319.Web_brwoser;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -31,6 +31,7 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import java.io.File;
+import net.tomoka319.internet.R;
 import org.apache.http.impl.cookie.BasicClientCookie;
 
 public class MainActivity extends Activity {

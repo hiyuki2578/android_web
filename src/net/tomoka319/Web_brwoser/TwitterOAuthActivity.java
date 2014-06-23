@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package net.tomoka319.internet;
+package net.tomoka319.Web_brwoser;
 
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -18,7 +18,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import net.tomoka319.internet.TwitterUtils;
+import net.tomoka319.internet.R;
+import net.tomoka319.Web_brwoser.TwitterUtils;
 
 public class TwitterOAuthActivity extends Activity {
 
