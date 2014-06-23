@@ -23,22 +23,18 @@ public class WidgetProvider extends AppWidgetProvider {
     private static final String ACTION_WIDGET_UPDATE = "jp.co.se.android.recipe.action.ACTION_WIDGET_UPDATE";
 
     @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager,
-            int[] appWidgetIds) {
+    public void onUpdate(Context context, AppWidgetManager appWidgetManager,int[] appWidgetIds) {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
 
         // クリック時に発行するIntentを設定する
-        for (int appWidgetId : appWidgetIds) {
-            RemoteViews views = new RemoteViews(context.getPackageName(),
-                    R.layout.widget);
+        for (int appWidgetId : appWidgetIds) {RemoteViews views = new RemoteViews(context.getPackageName(),R.layout.widget);
 
             Intent intent = new Intent(context, WidgetProvider.class);
             intent.setAction(ACTION_WIDGET_UPDATE);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
 
             // PendingIntent
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
-                    appWidgetId, intent, 0);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(context,appWidgetId, intent, 0);
             views.setOnClickPendingIntent(R.id.text, pendingIntent);
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
@@ -61,8 +57,7 @@ public class WidgetProvider extends AppWidgetProvider {
             long millis = System.currentTimeMillis();
             Time time = new Time();
             time.set(millis);
-            views.setTextViewText(R.id.text, time.format("%Y年%m月%d日 %H:%M:%S")
-                    + "." + (millis % 1000));
+            views.setTextViewText(R.id.text, time.format("%Y年%m月%d日 %H:%M:%S"));
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
     }
