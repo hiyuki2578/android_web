@@ -31,7 +31,7 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import java.io.File;
-import net.tomoka319.internet.R;
+import net.tomoka319.Web_browser.R;
 import org.apache.http.impl.cookie.BasicClientCookie;
 
 public class MainActivity extends Activity {
