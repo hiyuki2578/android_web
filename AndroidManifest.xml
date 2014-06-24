@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.tomoka319.Web_browser"
-    android:versionCode="2014062401"
-    android:versionName="20140624r01" >
+    android:versionCode="2014062402"
+    android:versionName="20140624r02" >
     <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="19" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_HISTORY_BOOKMARKS"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
