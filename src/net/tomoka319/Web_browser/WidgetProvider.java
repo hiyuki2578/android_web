@@ -19,7 +19,7 @@ import android.text.format.Time;
 import android.widget.RemoteViews;
 
 public class WidgetProvider extends AppWidgetProvider {
-    private static final String ACTION_WIDGET_UPDATE = "jp.co.se.android.recipe.action.ACTION_WIDGET_UPDATE";
+    private static final String ACTION_WIDGET_UPDATE = "net.tomoka319.Web_browser.ACTION_WIDGET_UPDATE";
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager,int[] appWidgetIds) {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.tomoka319.Web_browser"
-    android:versionCode="2014062501"
-    android:versionName="20140625r01" >
+    android:versionCode="2014062601"
+    android:versionName="20140626r01" >
     <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="19" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
