@@ -19,45 +19,41 @@ import android.text.format.Time;
 import android.widget.RemoteViews;
 
 public class WidgetProvider extends AppWidgetProvider {
-    private static final String ACTION_WIDGET_UPDATE = "net.tomoka319.Web_browser.ACTION_WIDGET_UPDATE";
+	private static final String ACTION_WIDGET_UPDATE = "net.tomoka319.Web_browser.ACTION_WIDGET_UPDATE";
 
-    @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager,int[] appWidgetIds) {
-        super.onUpdate(context, appWidgetManager, appWidgetIds);
+	@Override
+	public void onUpdate(Context context, AppWidgetManager appWidgetManager,int[] appWidgetIds) {
+		super.onUpdate(context, appWidgetManager, appWidgetIds);
 
-        // クリック時に発行するIntentを設定する
-        for (int appWidgetId : appWidgetIds) {RemoteViews views = new RemoteViews(context.getPackageName(),R.layout.widget);
+		// クリック時に発行するIntentを設定する
+		for (int appWidgetId : appWidgetIds) {RemoteViews views = new RemoteViews(context.getPackageName(),R.layout.widget);
 
-            Intent intent = new Intent(context, WidgetProvider.class);
-            intent.setAction(ACTION_WIDGET_UPDATE);
-            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+		Intent intent = new Intent(context, WidgetProvider.class);
+		intent.setAction(ACTION_WIDGET_UPDATE);
+		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
 
-            // PendingIntent
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(context,appWidgetId, intent, 0);
-            views.setOnClickPendingIntent(R.id.text, pendingIntent);
-            appWidgetManager.updateAppWidget(appWidgetId, views);
-        }
-    }
+		// PendingIntent
+		PendingIntent pendingIntent = PendingIntent.getBroadcast(context,appWidgetId, intent, 0);
+		views.setOnClickPendingIntent(R.id.text, pendingIntent);
+		appWidgetManager.updateAppWidget(appWidgetId, views);
+		}
+	}
 
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        super.onReceive(context, intent);
+	@Override
+	public void onReceive(Context context, Intent intent) {
+		super.onReceive(context, intent);
 
-        // クリック時に発行するIntentを設定する
-        AppWidgetManager appWidgetManager = AppWidgetManager
-                .getInstance(context);
-        if (ACTION_WIDGET_UPDATE.equals(intent.getAction())) {
-            RemoteViews views = new RemoteViews(context.getPackageName(),
-                    R.layout.widget);
-            int appWidgetId = intent.getIntExtra(
-                    AppWidgetManager.EXTRA_APPWIDGET_ID, -1);
-
-            // 画面を更新
-            long millis = System.currentTimeMillis();
-            Time time = new Time();
-            time.set(millis);
-            views.setTextViewText(R.id.text, time.format("%Y年%m月%d日 %H:%M:%S"));
-            appWidgetManager.updateAppWidget(appWidgetId, views);
-        }
-    }
+		// クリック時に発行するIntentを設定する
+		AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+		if (ACTION_WIDGET_UPDATE.equals(intent.getAction())) {
+			RemoteViews views = new RemoteViews(context.getPackageName(),R.layout.widget);
+			int appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, -1);
+			// 画面を更新
+			long millis = System.currentTimeMillis();
+			Time time = new Time();
+			time.set(millis);
+			views.setTextViewText(R.id.text, time.format("%Y年%m月%d日 %H:%M:%S"));
+			appWidgetManager.updateAppWidget(appWidgetId, views);
+		}
+	}
 }

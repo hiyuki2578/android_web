@@ -14,17 +14,17 @@ import android.preference.PreferenceFragment;
  * @author hiyuki
  */
 public class Preference extends Activity {
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction().replace(android.R.id.content, new PrefsFragment()).commit();
-    }
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		getFragmentManager().beginTransaction().replace(android.R.id.content, new PrefsFragment()).commit();
+	}
 
-    public static class PrefsFragment extends PreferenceFragment {
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.preference);
-        }
-    }
+	public static class PrefsFragment extends PreferenceFragment {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		addPreferencesFromResource(R.xml.preference);
+		}
+	}
 }
