@@ -9,14 +9,17 @@ package net.tomoka319.Web_browser;
 import android.app.Activity;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+import android.view.View;
 /**
  *
  * @author hiyuki
  */
 public class Preference extends Activity {
+	private static final int VIEW_FLAGS = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
 		getFragmentManager().beginTransaction().replace(android.R.id.content, new PrefsFragment()).commit();
 	}
 

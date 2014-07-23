@@ -37,7 +37,6 @@ public class MainActivity extends Activity {
 		SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
 		super.onCreate(savedInstanceState);
 		getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
-		
 		CookieSyncManager.createInstance(getApplicationContext());
 		CookieManager cm = CookieManager.getInstance();
 		cm.setAcceptCookie(true);
