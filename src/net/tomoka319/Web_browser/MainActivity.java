@@ -20,11 +20,8 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
-import android.webkit.GeolocationPermissions;
-import android.webkit.GeolocationPermissions.Callback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -42,8 +39,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
 		super.onCreate(savedInstanceState);
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		//requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION| View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 		CookieSyncManager.createInstance(getApplicationContext());
 		CookieManager cm = CookieManager.getInstance();
 		cm.setAcceptCookie(true);
@@ -91,20 +87,10 @@ public class MainActivity extends Activity {
 		});
 
 		myWebView.setWebChromeClient(new WebChromeClient(){
-			@Override
-			public void onGeolocationPermissionsShowPrompt(String origin, Callback callback) {
-				GeolocationPermissionDialog.newInstance(callback,origin).show(getFragmentManager(),GeolocationPermissionDialog.FRG_TAG);
-			}
-
-			@Override
-			public void onGeolocationPermissionsHidePrompt(){
-				FragmentManager fm = getFragmentManager();
-				Fragment f = fm.findFragmentByTag(GeolocationPermissionDialog.FRG_TAG);
-				if (f != null){
-					GeolocationPermissionDialog d = (GeolocationPermissionDialog) f;
-					d.dismissAllowingStateLoss();
-				}
-			}
+			
+			
+			
+				
 			@Override
 			public void onProgressChanged(WebView view, int progress){
 				progressBar.setProgress(progress);
@@ -235,44 +221,7 @@ public class MainActivity extends Activity {
 		}
 		ws.setGeolocationDatabasePath(databaseDir.getPath());
 	}
-	public static class GeolocationPermissionDialog extends DialogFragment {
-		public static final String FRG_TAG = GeolocationPermissionDialog.class.getSimpleName();
-		public static final String EXTRA_ORIGIN ="extra.ORIGIN";
-		private GeolocationPermissions.Callback mCallback;
-		public static final GeolocationPermissionDialog newInstance(GeolocationPermissions.Callback callback,String origin){
-			GeolocationPermissionDialog f = new GeolocationPermissionDialog();
-			f.mCallback = callback;
-			Bundle args = new Bundle();
-			args.putString(EXTRA_ORIGIN, origin);
-			f.setArguments(args);
-			return f;
-		}
-		@Override
-		public Dialog onCreateDialog(Bundle savedInstanceState){
-			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-			builder.setTitle("位置情報の要求");
-			builder.setMessage(String.format("このページはあなたの位置情報を要求しています。\n許可しますか？",getArguments().getString(EXTRA_ORIGIN)));
-			builder.setPositiveButton("はい", new DialogInterface.OnClickListener(){
-				@Override
-				public void onClick(DialogInterface dialog,int which){
-					if(mCallback!=null){
-						mCallback.invoke(getArguments().getString(EXTRA_ORIGIN),true,false);
-					}
-				mCallback=null;
-				}
-			});
-			builder.setNegativeButton("キャンセル", null);
-			return builder.create();
-		}
-		@Override
-		public void onDismiss(DialogInterface dialog){
-			super.onDismiss(dialog);
-			if(mCallback!=null){
-				mCallback.invoke(getArguments().getString(EXTRA_ORIGIN), false, false);
-				mCallback=null;
-			}
-		}
-	}
+	
 	@SuppressWarnings("deprecation")
 	private void setupWebStorage(WebView webview){
 	        WebSettings ws =webview.getSettings();
