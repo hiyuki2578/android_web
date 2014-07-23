@@ -4,26 +4,22 @@
     
     <item android:id="@+id/quit"
         android:title="@string/quit"
-        android:orderInCategory="900"
-        android:showAsAction="never" />
-    <item android:id="@+id/back"
-        android:title="@string/Back"
-        android:orderInCategory="2"
-        android:showAsAction="never" />
+        android:orderInCategory="5"
+        android:showAsAction="always" />
     <item android:id="@+id/forward"
         android:title="@string/forward"
         android:orderInCategory="1"
-        android:showAsAction="never" />
+        android:showAsAction="always" />
     <item android:id="@+id/home"
         android:title="@string/homepage"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
+        android:orderInCategory="2"
+        android:showAsAction="always" />
     <item android:id="@+id/reload"
         android:title="@string/reload"
         android:orderInCategory="3"
-        android:showAsAction="never" />
+        android:showAsAction="always" />
     <item android:id="@+id/setting"
         android:title="@string/setting"
         android:orderInCategory="4"
-        android:showAsAction="never" />
+        android:showAsAction="always" />
 </menu>

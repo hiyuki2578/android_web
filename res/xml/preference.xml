@@ -9,12 +9,12 @@
 
     <CheckBoxPreference
         android:key="homepage-select"
-        android:title="Homepage-select"
-        android:summary="Homepage-select" />
+        android:title="@string/home_select"
+        android:summary="Homepage-select"/>
 
     <ListPreference
         android:key="home_preference"
-        android:title="@string/homepage"
+        android:title="@string/home_list"
         android:summary="HomePreference"
         android:entries="@array/home_list"
         android:entryValues="@array/homevalues"

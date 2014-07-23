@@ -2,13 +2,7 @@ package net.tomoka319.Web_browser;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -20,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import android.webkit.WebChromeClient;
@@ -33,13 +28,16 @@ import java.io.File;
 public class MainActivity extends Activity {
 
 	private ProgressBar progressBar;
-
+	
+	private static final int VIEW_FLAGS = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
+	
 	@SuppressLint("SetJavaScriptEnabled")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
 		super.onCreate(savedInstanceState);
-		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION| View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+		getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
+		
 		CookieSyncManager.createInstance(getApplicationContext());
 		CookieManager cm = CookieManager.getInstance();
 		cm.setAcceptCookie(true);
@@ -67,6 +65,7 @@ public class MainActivity extends Activity {
 				//プログレスバー表示
 				progressBar.setVisibility(View.VISIBLE);
 				textView.setVisibility(View.VISIBLE);
+				getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
 			}
 
 			@Override
@@ -132,34 +131,31 @@ public class MainActivity extends Activity {
 			textView.setBackgroundColor(Color.WHITE);
 			textView.setText("LoadingNow");
 		}
+		
 
 	}
 
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		
 		// Inflate the menu; this adds items to the action bar if it is present.
+		//getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
+		getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
 		TextView textView = (TextView) findViewById(R.id.textView);
 		WebView webView = (WebView)findViewById(R.id.webView);
 		int id = item.getItemId();
 		if (id == R.id.quit){
 			//Activityの終了
 			this.finish();
-		}
-		if (id == R.id.back){
-			//戻る
-			webView.goBack();
-			return true;
 		}
 		if (id == R.id.forward){
 			//進む
@@ -194,6 +190,11 @@ public class MainActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	@Override
+	public void onOptionsMenuClosed (Menu menu){
+		ViewGroup contentRoot = (ViewGroup)this.findViewById(android.R.id.content);
+		contentRoot.setSystemUiVisibility(VIEW_FLAGS);
+	}
+	@Override
 	public boolean onKeyDown( int keyCode, KeyEvent event){
 		WebView webview = (WebView)findViewById(R.id.webView);
 		if(keyCode == KeyEvent.KEYCODE_BACK && webview.canGoBack()) {
@@ -206,6 +207,7 @@ public class MainActivity extends Activity {
 	protected void onResume(){
 		super.onResume();
 		CookieSyncManager.getInstance().startSync();
+		getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
 	}
 	@Override
 	protected void onPause(){
