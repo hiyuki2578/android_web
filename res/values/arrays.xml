@@ -8,6 +8,7 @@
         <item>Twitter</item>
         <item>ftp.jaist.ac.jp</item>
         <item>openSUSE</item>
+        <item>tippy.gochiusa.net</item>
     </string-array>
     <string-array name="homevalues">
         <item>https://www.google.com</item>
@@ -17,5 +18,6 @@
         <item>https://www.twitter.com</item>
         <item>http://ftp.jaist.ac.jp/pub/</item>
         <item>http://ja.opensuse.org/</item>
+        <item>http://tippy.gochiusa.net/</item>
     </string-array>
 </resources>

@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
 		CookieManager cm = CookieManager.getInstance();
 		cm.setAcceptCookie(true);
 		cm.removeExpiredCookie();
-	
+		
 		setContentView(R.layout.main);
 		progressBar =(ProgressBar) findViewById(R.id.progressbar);
 		TextView textView = (TextView) findViewById(R.id.textView);
@@ -66,7 +66,7 @@ public class MainActivity extends Activity {
 				textView.setVisibility(View.VISIBLE);
 				getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
 			}
-
+			
 			@Override
 			public void onPageFinished(WebView view, String url) {
 				super.onPageFinished(view, url);
@@ -77,18 +77,14 @@ public class MainActivity extends Activity {
 				progressBar.setVisibility(View.GONE);
 				textView.setVisibility(View.GONE);
 			}
-
+			
 			@Override
 			public boolean shouldOverrideUrlLoading(WebView view, String url) {
 				return false;
 			}
 		});
-
-		myWebView.setWebChromeClient(new WebChromeClient(){
-			
-			
-			
-				
+		
+		myWebView.setWebChromeClient(new WebChromeClient(){				
 			@Override
 			public void onProgressChanged(WebView view, int progress){
 				progressBar.setProgress(progress);
@@ -122,16 +118,16 @@ public class MainActivity extends Activity {
 		//ホームページが映るコード
 		boolean checkboxValue1 = spf.getBoolean("homepage-select",false);
 		if (checkboxValue1 == true){
-			String homeUrl = spf.getString("home_Url","https://www.google.com/");
+			String homeUrl = spf.getString("home_Url","http://www.google.com/");
 			myWebView.loadUrl(homeUrl);
 		}else{
-			String homeValue = spf.getString("home_preference", "https://www.google.com/");
+			String homeValue = spf.getString("home_preference", "http://www.google.com/");
 			myWebView.loadUrl(homeValue);
 			textView.setBackgroundColor(Color.WHITE);
 			textView.setText("LoadingNow");
 		}
-		
-
+	
+	
 	}
 
 
@@ -178,9 +174,9 @@ public class MainActivity extends Activity {
 			
 		}
 		if (id == R.id.reload){
-		//reload
-		webView.reload();
-		return true;
+			//reload
+			webView.reload();
+			return true;
 		}
 		if (id == R.id.setting){
 			Intent intent = new Intent(this, Preference.class);
