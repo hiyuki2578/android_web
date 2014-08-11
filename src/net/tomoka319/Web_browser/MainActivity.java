@@ -118,10 +118,10 @@ public class MainActivity extends Activity {
 		//ホームページが映るコード
 		boolean checkboxValue1 = spf.getBoolean("homepage-select",false);
 		if (checkboxValue1 == true){
-			String homeUrl = spf.getString("home_Url","http://www.google.com/");
+			String homeUrl = spf.getString("home_Url","https://www.google.com/");
 			myWebView.loadUrl(homeUrl);
 		}else{
-			String homeValue = spf.getString("home_preference", "http://www.google.com/");
+			String homeValue = spf.getString("home_preference", "https://www.google.com/");
 			myWebView.loadUrl(homeValue);
 			textView.setBackgroundColor(Color.WHITE);
 			textView.setText("LoadingNow");
@@ -163,10 +163,10 @@ public class MainActivity extends Activity {
 			boolean checkboxValue1 = spf.getBoolean("homepage-select",false);
 			if (checkboxValue1 == true)
 			{
-				String homeUrl = spf.getString("home_Url","https://www.google.com");
+				String homeUrl = spf.getString("home_Url","https://www.google.com/");
 				webView.loadUrl(homeUrl);
 			}else{
-				String homeValue = spf.getString("home_preference", "https://www.google.com");
+				String homeValue = spf.getString("home_preference", "https://www.google.com/");
 				webView.loadUrl(homeValue);
 				textView.setBackgroundColor(Color.WHITE);
 				textView.setText("LoadingNow");
