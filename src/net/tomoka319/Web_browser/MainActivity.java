@@ -147,40 +147,39 @@ public class MainActivity extends Activity {
 		getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
 		TextView textView = (TextView) findViewById(R.id.textView);
 		WebView webView = (WebView)findViewById(R.id.webView);
-		int id = item.getItemId();
-		if (id == R.id.quit){
-			//Activityの終了
-			this.finish();
-		}
-		if (id == R.id.forward){
-			//進む
-			webView.goForward();
-			return true;
-		}
-		if (id == R.id.home){
-			//home
-			SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
-			boolean checkboxValue1 = spf.getBoolean("homepage-select",false);
-			if (checkboxValue1 == true)
-			{
-				String homeUrl = spf.getString("home_Url","https://www.google.com/");
-				webView.loadUrl(homeUrl);
-			}else{
-				String homeValue = spf.getString("home_preference", "https://www.google.com/");
-				webView.loadUrl(homeValue);
-				textView.setBackgroundColor(Color.WHITE);
-				textView.setText("LoadingNow");
-			}
-			
-		}
-		if (id == R.id.reload){
-			//reload
-			webView.reload();
-			return true;
-		}
-		if (id == R.id.setting){
-			Intent intent = new Intent(this, Preference.class);
-			startActivity(intent);
+		switch(item.getItemId())
+		{
+			case R.id.quit:
+				//Activityの終了
+				this.finish();
+				return true;
+			case R.id.forward:
+				//進む
+				webView.goForward();
+				return true;
+			case R.id.home:
+				//home
+				SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
+				boolean checkboxValue1 = spf.getBoolean("homepage-select",false);
+				if (checkboxValue1 == true)
+				{
+					String homeUrl = spf.getString("home_Url","https://www.google.com/");
+					webView.loadUrl(homeUrl);
+				}else{
+					String homeValue = spf.getString("home_preference", "https://www.google.com/");
+					webView.loadUrl(homeValue);
+					textView.setBackgroundColor(Color.WHITE);
+					textView.setText("LoadingNow");
+				}
+				return true;
+			case R.id.reload:
+				//reload
+				webView.reload();
+				return true;
+			case R.id.setting:
+				Intent intent = new Intent(this, Preference.class);
+				startActivity(intent);
+				return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
