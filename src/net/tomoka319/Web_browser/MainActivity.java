@@ -112,11 +112,9 @@ public class MainActivity extends Activity {
 		//         |  ヽﾉヽ／＼＜ｼﾝｺﾞｰﾊﾟｰｿﾝﾌﾟﾚｰｲ 
 		//          ＞＞  ＼／
 		boolean checkboxValue = spf.getBoolean("EnableJavaScripts", false);
-		String userAgentString = webView.getSettings().getUserAgentString();  
-		Log.v("CHECK", userAgentString);  
-		webView.getSettings().setUserAgentString(userAgentString+" hiyuki2578");  
-		userAgentString = webView.getSettings().getUserAgentString();  
-		Log.v("CHECK", userAgentString);  
+		String userAgentString = myWebView.getSettings().getUserAgentString();
+		myWebView.getSettings().setUserAgentString(userAgentString+" hiyuki2578");  
+		userAgentString = myWebView.getSettings().getUserAgentString();
 		if(checkboxValue == true){
 			webSettings.setJavaScriptEnabled(true);
 		}
