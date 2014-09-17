@@ -176,7 +176,7 @@ public class MainActivity extends Activity {
 					textView.setBackgroundColor(Color.WHITE);
 					textView.setText("LoadingNow");
 				}
-				return;
+				return false;
 			case R.id.reload:
 				//reload
 				webView.reload();
@@ -185,6 +185,7 @@ public class MainActivity extends Activity {
 				Intent intent = new Intent(this, Preference.class);
 				startActivity(intent);
 				return true;
+		}
 		return super.onOptionsItemSelected(item);
 	}
 	@Override
