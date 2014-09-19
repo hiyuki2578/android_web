@@ -150,21 +150,12 @@ public class MainActivity extends Activity {
 		getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
 		TextView textView = (TextView) findViewById(R.id.textView);
 		WebView webView = (WebView)findViewById(R.id.webView);
-<<<<<<< HEAD
-		int id = item.getItemId();
-		switch (item.getItemId()){
-			case R.id.quit:
-				//Activityの終了
-				this.finish();
-				return false;
-=======
 		switch(item.getItemId())
 		{
 			case R.id.quit:
 				//Activityの終了
 				this.finish();
 				return true;
->>>>>>> master
 			case R.id.forward:
 				//進む
 				webView.goForward();
@@ -183,11 +174,7 @@ public class MainActivity extends Activity {
 					textView.setBackgroundColor(Color.WHITE);
 					textView.setText("LoadingNow");
 				}
-<<<<<<< HEAD
-				return false;
-=======
 				return true;
->>>>>>> master
 			case R.id.reload:
 				//reload
 				webView.reload();
