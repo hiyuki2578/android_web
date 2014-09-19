@@ -24,7 +24,6 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import java.io.File;
-import net.tomoka319.Web_browser.R;
 
 public class MainActivity extends Activity {
 

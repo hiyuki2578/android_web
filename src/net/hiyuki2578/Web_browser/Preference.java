@@ -10,7 +10,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.view.View;
-import net.tomoka319.Web_browser.R;
 /**
  *
  * @author hiyuki

@@ -17,7 +17,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-import net.tomoka319.Web_browser.R;
 
 public class TwitterOAuthActivity extends Activity {
 
