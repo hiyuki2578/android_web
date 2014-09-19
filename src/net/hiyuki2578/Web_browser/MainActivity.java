@@ -1,4 +1,4 @@
-package net.tomoka319.Web_browser;
+package net.hiyuki2578.Web_browser;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -24,6 +24,7 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import java.io.File;
+import net.tomoka319.Web_browser.R;
 
 public class MainActivity extends Activity {
 

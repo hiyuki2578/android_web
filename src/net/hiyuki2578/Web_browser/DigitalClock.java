@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package net.tomoka319.Web_browser;
+package net.hiyuki2578.Web_browser;
 
 /**
  *

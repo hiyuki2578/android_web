@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package net.tomoka319.Web_browser;
+package net.hiyuki2578.Web_browser;
 
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
@@ -12,6 +12,7 @@ import twitter4j.auth.AccessToken;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import net.tomoka319.Web_browser.R;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

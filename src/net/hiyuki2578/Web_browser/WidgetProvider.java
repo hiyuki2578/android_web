@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package net.tomoka319.Web_browser;
+package net.hiyuki2578.Web_browser;
 
 /**
  *
@@ -17,6 +17,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.format.Time;
 import android.widget.RemoteViews;
+import net.tomoka319.Web_browser.R;
 
 public class WidgetProvider extends AppWidgetProvider {
 	private static final String ACTION_WIDGET_UPDATE = "net.tomoka319.Web_browser.ACTION_WIDGET_UPDATE";
