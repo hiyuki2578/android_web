@@ -6,8 +6,8 @@
         android:title="@string/quit"
         android:orderInCategory="5"
         android:showAsAction="always" />
-    <item android:id="@+id/forward"
-        android:title="@string/forward"
+    <item android:id="@+id/Tweet"
+        android:title="@string/Tweet"
         android:orderInCategory="1"
         android:showAsAction="always" />
     <item android:id="@+id/home"

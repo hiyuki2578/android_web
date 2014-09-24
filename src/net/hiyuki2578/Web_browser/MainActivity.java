@@ -156,9 +156,10 @@ public class MainActivity extends Activity {
 				//Activityの終了
 				this.finish();
 				return true;
-			case R.id.forward:
+			case R.id.Tweet:
 				//進む
-				webView.goForward();
+                                String url=webView.getUrl();
+				webView.loadUrl("http://twitter.com/intent/tweet?text="+"見てるなう"+url);
 				return true;
 			case R.id.home:
 				//home
