@@ -159,7 +159,8 @@ public class MainActivity extends Activity {
 			case R.id.tweet:
 				//進む
                                 String url=webView.getUrl();
-				webView.loadUrl("http://twitter.com/intent/tweet?text="+url);
+                                url = "http://twitter.com/intent/tweet?text="+url;
+				webView.loadUrl(url);
 				return true;
 			case R.id.home:
 				//home
