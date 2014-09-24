@@ -9,7 +9,7 @@
         android:id="@+id/webView"
         android:paddingTop="16sp"
     />
-    <net.tomoka319.Web_browser.DigitalClock
+    <net.hiyuki2578.Web_browser.DigitalClock
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
