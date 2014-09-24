@@ -158,9 +158,9 @@ public class MainActivity extends Activity {
 				return true;
 			case R.id.tweet:
 				//進む
-                                String url=webView.getUrl();
-                                url = "http://twitter.com/intent/tweet?text="+url;
-				webView.loadUrl(url);
+                                //String url=webView.getUrl();
+                                //url = "http://twitter.com/intent/tweet?text="+url;
+				//webView.loadUrl(url);
 				return true;
 			case R.id.home:
 				//home
