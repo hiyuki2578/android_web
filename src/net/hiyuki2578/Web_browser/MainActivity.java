@@ -156,8 +156,6 @@ public class MainActivity extends Activity {
 				//Activityの終了
 				this.finish();
 				return true;
-			case R.id.tweet:
-				return true;
 			case R.id.home:
 				//home
 				SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);

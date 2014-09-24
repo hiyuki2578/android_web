@@ -6,10 +6,6 @@
         android:title="@string/quit"
         android:orderInCategory="5"
         android:showAsAction="always" />
-    <item android:id="@+id/tweet"
-        android:title="@string/Tweet"
-        android:orderInCategory="1"
-        android:showAsAction="always" />
     <item android:id="@+id/home"
         android:title="@string/homepage"
         android:orderInCategory="2"
