@@ -14,7 +14,6 @@ import java.util.Calendar;
 
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -59,7 +58,6 @@ public class DigitalClock extends TextView {
 
 
 		//Resources r = mContext.getResources();
-		Resources r = context.getResources();
 		if (mCalendar == null) {
 			mCalendar = Calendar.getInstance();
 		}
