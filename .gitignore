@@ -6,3 +6,6 @@ bin/
 gen/
 nbandroid/
 local.properties
+.classpath
+.project
+.settings/

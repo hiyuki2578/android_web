@@ -223,10 +223,10 @@ public class MainActivity extends Activity {
 	
 	@SuppressWarnings("deprecation")
 	private void setupWebStorage(WebView webview){
-	        WebSettings ws =webview.getSettings();
+		WebSettings ws =webview.getSettings();
 		ws.setDatabaseEnabled(true);
 		ws.setDomStorageEnabled(true);
-	        if(Build.VERSION_CODES.JELLY_BEAN_MR2 <= Build.VERSION.SDK_INT){
+		if(Build.VERSION_CODES.JELLY_BEAN_MR2 <= Build.VERSION.SDK_INT){
 			File databaseDir = getDir("database", Context.MODE_PRIVATE);
 			if(!databaseDir.exists()){
 				databaseDir.mkdirs();

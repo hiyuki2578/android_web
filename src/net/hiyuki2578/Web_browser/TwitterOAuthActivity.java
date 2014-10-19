@@ -54,7 +54,7 @@ public class TwitterOAuthActivity extends Activity {
 	}
 
 	/**
-	* OAuth認証（厳密には認可）を開始します。
+	* OAuth認証を開始します。
 	*
 	* @param listener
 	*/
