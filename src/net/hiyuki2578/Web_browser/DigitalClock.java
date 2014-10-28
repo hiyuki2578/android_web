@@ -11,8 +11,6 @@ package net.hiyuki2578.Web_browser;
  * @author hiyuki
  */
 import java.util.Calendar;
-
-
 import android.content.Context;
 import android.database.ContentObserver;
 import android.os.Handler;
