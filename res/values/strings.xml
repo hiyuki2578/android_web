@@ -11,10 +11,6 @@
     <string name="javascript">JSの有効化</string>
     <string name="homepage">ホーム</string>
     <string name="homeUrl">ホームページのURLを入力</string>
-    <string name="twitter_consumer_key">DfwswGpdyKi4BUulLPctHA</string>
-    <string name="twitter_consumer_secret">w4rOZcyInE5uItvTmB91ni1pyRECQWp3ZYbX0LntcA</string>
-    <string name="twitter_oauth">Twitterで認証</string>
-    <string name="twitter_callback_url">hiyuki2578://twitter</string>
     <string name="home_list">ホームページ選択</string>
     <string name="home_select">ホームにするURLの入力をするか</string>
 </resources>
