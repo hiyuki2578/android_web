@@ -12,5 +12,5 @@
     <string name="homepage">ホーム</string>
     <string name="homeUrl">ホームページのURLを入力</string>
     <string name="home_list">ホームページ選択</string>
-    <string name="home_select">ホームにするURLの入力をするか</string>
+    <string name="home_select">ホームページのURLの入力をする</string>
 </resources>

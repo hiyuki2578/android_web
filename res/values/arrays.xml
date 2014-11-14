@@ -9,7 +9,7 @@
         <item>ftp.jaist.ac.jp</item>
         <item>openSUSE</item>
         <item>tippy.gochiusa.net</item>
-        <item>floppybird</item>
+        <item>floppybird(JSの有効化が必要)</item>
     </string-array>
     <string-array name="homevalues">
         <item>https://www.google.com/</item>
@@ -20,6 +20,6 @@
         <item>http://ftp.jaist.ac.jp/pub/</item>
         <item>http://ja.opensuse.org/</item>
         <item>http://tippy.gochiusa.net/</item>
-        <item>file:///android_asset/index.html</item>
+        <item>http://www.hiyuki2578.net/floppy/</item>
     </string-array>
 </resources>
