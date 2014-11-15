@@ -27,7 +27,7 @@ public class DigitalClock extends TextView {
 
 
 	Calendar mCalendar;
-	private final static String m24 = "k:mm:ss";
+	private final static String clockstyle = "k:mm:ss";
 	private FormatChangeObserver mFormatChangeObserver;
 
 
@@ -102,7 +102,7 @@ public class DigitalClock extends TextView {
 	}
 
 	private void setFormat() {
-		mFormat = m24;
+		mFormat = clockstyle;
 	}
 
 	private class FormatChangeObserver extends ContentObserver {
