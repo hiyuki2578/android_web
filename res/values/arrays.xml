@@ -18,7 +18,7 @@
         <item>http://www.yahoo.co.jp/</item>
         <item>https://www.twitter.com/</item>
         <item>http://tippy.gochiusa.net/</item>
-        <item>http://www.hiyuki2578.net/floppy/</item>
+        <item>file:///android_asset/floppy/index.html</item>
         <item>http://ftp.jaist.ac.jp/pub/</item>
         <item>http://ja.opensuse.org/</item>
     </string-array>
