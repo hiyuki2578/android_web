@@ -10,3 +10,4 @@ local.properties
 .classpath
 .project
 .settings/
+/lint.xml
