@@ -65,7 +65,9 @@ public class MainActivity extends Activity {
 				//プログレスバー表示
 				progressBar.setVisibility(View.VISIBLE);
 				textView.setVisibility(View.VISIBLE);
-				getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
+				if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+					getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
+				}
 			}
 			
 			@Override
@@ -148,7 +150,9 @@ public class MainActivity extends Activity {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+			getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
+		}
 		TextView textView = (TextView) findViewById(R.id.textView);
 		WebView webView = (WebView)findViewById(R.id.webView);
 		switch(item.getItemId())
@@ -189,8 +193,10 @@ public class MainActivity extends Activity {
 	}
 	@Override
 	public void onOptionsMenuClosed (Menu menu){
-		ViewGroup contentRoot = (ViewGroup)this.findViewById(android.R.id.content);
-		contentRoot.setSystemUiVisibility(VIEW_FLAGS);
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+			ViewGroup contentRoot = (ViewGroup)this.findViewById(android.R.id.content);
+			contentRoot.setSystemUiVisibility(VIEW_FLAGS);
+		}
 	}
 	@Override
 	public boolean onKeyDown( int keyCode, KeyEvent event){
