@@ -7,6 +7,7 @@
 package net.hiyuki2578.Web_browser;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.view.View;
@@ -20,7 +21,9 @@ public class Preference extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+			getWindow().getDecorView().setSystemUiVisibility(VIEW_FLAGS);
+		}
 		getFragmentManager().beginTransaction().replace(android.R.id.content, new PrefsFragment()).commit();
 	}
 
