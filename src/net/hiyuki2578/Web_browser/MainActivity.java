@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -25,9 +26,13 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
 
 public class MainActivity extends Activity {
-
+	
+    private Twitter mTwitter;
 	private ProgressBar progressBar;
 	
 	private static final int VIEW_FLAGS = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
@@ -133,7 +138,6 @@ public class MainActivity extends Activity {
 			textView.setText("LoadingNow");
 		}
 	
-	
 	}
 
 
@@ -155,6 +159,9 @@ public class MainActivity extends Activity {
 		}
 		TextView textView = (TextView) findViewById(R.id.textView);
 		WebView webView = (WebView)findViewById(R.id.webView);
+		
+		
+	
 		switch(item.getItemId())
 		{
 			case R.id.quit:
@@ -162,8 +169,17 @@ public class MainActivity extends Activity {
 				this.finish();
 				return true;
 			case R.id.tweet:
-				String url = webView.getUrl();
-				webView.loadUrl("http://twitter.com/intent/tweet?text="+"見てるなう "+url+" ");
+				if (!net.hiyuki2578.Web_browser.TwitterUtils.hasAccessToken(this)) {
+					showToast("認証開始します。");
+		            Intent intent = new Intent(this, TwitterOAuthActivity.class);
+		            startActivity(intent);
+		            finish();
+		        } else {
+
+		            mTwitter = net.hiyuki2578.Web_browser.TwitterUtils.getTwitterInstance(this);
+		        }
+				showToast("ツイートします。");
+				tweet(webView.getUrl());
 				return true;
 			case R.id.home:
 				//home
@@ -185,12 +201,14 @@ public class MainActivity extends Activity {
 				webView.reload();
 				return true;
 			case R.id.setting:
-				Intent intent = new Intent(this, Preference.class);
-				startActivity(intent);
+				Intent intent1 = new Intent(this, Preference.class);
+				startActivity(intent1);
 				return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+
 	@Override
 	public void onOptionsMenuClosed (Menu menu){
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
@@ -240,5 +258,34 @@ public class MainActivity extends Activity {
 			}
 			ws.setDatabasePath(databaseDir.getPath());
 		}
+	}
+	private void tweet(String url) {
+        AsyncTask<String, Void, Boolean> task = new AsyncTask<String, Void, Boolean>() {
+            @Override
+            protected Boolean doInBackground(String... params) {
+                try {
+                    mTwitter.updateStatus(params[0]);
+                    return true;
+                } catch (TwitterException e) {
+                    e.printStackTrace();
+                    return false;
+                }
+            }
+
+            @Override
+            protected void onPostExecute(Boolean result) {
+                if (result) {
+                    showToast("ツイートが完了しました！");;
+                } else {
+                    showToast("ツイートに失敗しました。。。");
+                }
+            }
+
+        };
+        task.execute(url+" #見てるなう");
+    }
+
+    private void showToast(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
 	}
 }

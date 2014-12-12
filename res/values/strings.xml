@@ -13,4 +13,8 @@
     <string name="homeUrl">ホームページのURLを入力</string>
     <string name="home_list">ホームページ選択</string>
     <string name="home_select">ホームページのURLの入力をする</string>
+    <string name="twitter_consumer_key">7rT6bJKiXPlsxpX9ro1QkbkOh</string>
+    <string name="twitter_consumer_secret">USPDeknjcOzxDxxDLb2leT5FGhNKGAPzVTsBCuBK9amPDcYWbl</string>
+    <string name="twitter_oauth">Twitter認証</string>
+    <string name="twitter_callback_url">hiyuki://twitter</string>
 </resources>

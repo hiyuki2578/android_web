@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="net.tomoka319.internet.MainActivity" >
+    tools:context="net.hiyuki2578.Web_browser.MainActivity" >
     
     <item android:id="@+id/quit"
         android:title="@string/quit"
