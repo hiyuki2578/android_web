@@ -282,7 +282,8 @@ public class MainActivity extends Activity {
             }
 
         };
-        task.execute(url+" #見てるなう");
+        task.execute(url+" #watching");
+        showToast("ツイート内容 :"+url+" #watching");
     }
 
     private void showToast(String text) {
