@@ -25,5 +25,16 @@
         android:title="@string/homeUrl"
         android:summary="EnterHomeUrl"
         android:dialogTitle="@string/homeUrl" />
+    
+    <CheckBoxPreference
+        android:key="tweet"
+        android:title="@string/tweet_up"
+        android:summary="tweet" />
+    
+    <EditTextPreference 
+        android:key="tweet_type"
+        android:title="@string/tweet_type"
+        android:summary="Edit Tweet Style"
+        android:dialogTitle="@string/tweet_type"/>
 
 </PreferenceScreen>

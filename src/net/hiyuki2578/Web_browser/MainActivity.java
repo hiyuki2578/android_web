@@ -160,7 +160,7 @@ public class MainActivity extends Activity {
 		TextView textView = (TextView) findViewById(R.id.textView);
 		WebView webView = (WebView)findViewById(R.id.webView);
 		
-		
+		SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
 	
 		switch(item.getItemId())
 		{
@@ -179,11 +179,11 @@ public class MainActivity extends Activity {
 		            mTwitter = net.hiyuki2578.Web_browser.TwitterUtils.getTwitterInstance(this);
 		        }
 				showToast("ツイートします。");
-				tweet(webView.getUrl());
+				String tweet_style = spf.getString("tweet_type","#watching");
+				tweet(webView.getUrl(),tweet_style);
 				return true;
 			case R.id.home:
 				//home
-				SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
 				boolean checkboxValue1 = spf.getBoolean("homepage-select",false);
 				if (checkboxValue1 == true)
 				{
@@ -259,7 +259,7 @@ public class MainActivity extends Activity {
 			ws.setDatabasePath(databaseDir.getPath());
 		}
 	}
-	private void tweet(String url) {
+	private void tweet(String url, String style) {
         AsyncTask<String, Void, Boolean> task = new AsyncTask<String, Void, Boolean>() {
             @Override
             protected Boolean doInBackground(String... params) {
@@ -282,8 +282,15 @@ public class MainActivity extends Activity {
             }
 
         };
-        task.execute(url+" #watching");
-        showToast("ツイート内容 :"+url+" #watching");
+        SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean checkboxValue = spf.getBoolean("tweet", false);
+        if(checkboxValue==true){
+        	task.execute(style+" "+url);
+            showToast("ツイート内容 :"+style+" "+url);
+        }else{
+        	task.execute(url+" "+style);
+            showToast("ツイート内容 :"+url+" "+style);
+        }
     }
 
     private void showToast(String text) {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="net.hiyuki2578.Web_browser"
-	android:versionCode="2014121202"
-	android:versionName="20141212r02" >
+	android:versionCode="2014121301"
+	android:versionName="20141213r01" >
 	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="19" />
 	<uses-feature android:name="android.hardware.nfc"
 	    android:required="true"/>
