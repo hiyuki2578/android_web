@@ -31,8 +31,8 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 
 public class MainActivity extends Activity {
-	
-    private Twitter mTwitter;
+
+	private Twitter mTwitter;
 	private ProgressBar progressBar;
 	
 	private static final int VIEW_FLAGS = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
@@ -171,12 +171,11 @@ public class MainActivity extends Activity {
 			case R.id.tweet:
 				if (!net.hiyuki2578.Web_browser.TwitterUtils.hasAccessToken(this)) {
 					showToast("認証開始します。");
-		            Intent intent = new Intent(this, TwitterOAuthActivity.class);
-		            startActivity(intent);
-		            finish();
-		        } else {
-
-		            mTwitter = net.hiyuki2578.Web_browser.TwitterUtils.getTwitterInstance(this);
+					Intent intent = new Intent(this, TwitterOAuthActivity.class);
+					startActivity(intent);
+					finish();
+				} else {
+					mTwitter = net.hiyuki2578.Web_browser.TwitterUtils.getTwitterInstance(this);
 		        }
 				showToast("ツイートします。");
 				String tweet_style = spf.getString("tweet_type","#watching");
@@ -260,40 +259,38 @@ public class MainActivity extends Activity {
 		}
 	}
 	private void tweet(String url, String style) {
-        AsyncTask<String, Void, Boolean> task = new AsyncTask<String, Void, Boolean>() {
-            @Override
-            protected Boolean doInBackground(String... params) {
-                try {
-                    mTwitter.updateStatus(params[0]);
-                    return true;
-                } catch (TwitterException e) {
-                    e.printStackTrace();
-                    return false;
-                }
-            }
-
-            @Override
-            protected void onPostExecute(Boolean result) {
-                if (result) {
-                    showToast("ツイートが完了しました！");;
-                } else {
-                    showToast("ツイートに失敗しました。。。");
-                }
-            }
-
-        };
-        SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean checkboxValue = spf.getBoolean("tweet", false);
-        if(checkboxValue==true){
-        	task.execute(style+" "+url);
-            showToast("ツイート内容 :"+style+" "+url);
+		AsyncTask<String, Void, Boolean> task = new AsyncTask<String, Void, Boolean>() {
+			@Override
+			protected Boolean doInBackground(String... params) {
+				try {
+					mTwitter.updateStatus(params[0]);
+					return true;
+				} catch (TwitterException e) {
+					e.printStackTrace();
+					return false;
+				}
+			}
+			@Override
+			protected void onPostExecute(Boolean result) {
+				if (result) {
+					showToast("ツイートが完了しました！");
+				} else {
+					showToast("ツイートに失敗しました。。。");
+				}
+			}
+		};
+		SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
+		boolean checkboxValue = spf.getBoolean("tweet", false);
+		if(checkboxValue==true){
+			task.execute(style+" "+url);
+			showToast("ツイート内容 :"+style+" "+url);
         }else{
-        	task.execute(url+" "+style);
-            showToast("ツイート内容 :"+url+" "+style);
-        }
-    }
+			task.execute(url+" "+style);
+			showToast("ツイート内容 :"+url+" "+style);
+		}
+	}
 
-    private void showToast(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+	private void showToast(String text) {
+		Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
 	}
 }

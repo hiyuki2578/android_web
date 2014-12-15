@@ -5,7 +5,7 @@
 	android:versionName="20141213r01" >
 	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="19" />
 	<uses-feature android:name="android.hardware.nfc"
-	    android:required="true"/>
+		android:required="true"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -22,7 +22,6 @@
 			android:windowSoftInputMode="adjustResize">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
-
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
@@ -47,12 +46,12 @@
 			android:name=".TwitterOAuthActivity"
 			android:launchMode="singleTask" >
 			<intent-filter>
-			    <action android:name="android.intent.action.VIEW" />
-			    <category android:name="android.intent.category.DEFAULT" />
-			    <category android:name="android.intent.category.BROWSABLE" />
-			    <data
-			        android:host="twitter"
-			        android:scheme="hiyuki" />
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data
+					android:host="twitter"
+					android:scheme="hiyuki" />
 			</intent-filter>
 		</activity>           
 	</application>

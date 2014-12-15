@@ -28,10 +28,10 @@ public class Preference extends Activity {
 	}
 
 	public static class PrefsFragment extends PreferenceFragment {
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		addPreferencesFromResource(R.xml.preference);
-		}
+		@Override
+		public void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			addPreferencesFromResource(R.xml.preference);
+			}
 	}
 }

@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Web</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="quit">終了</string>
-    <string name="Back">戻る</string>
-    <string name="Tweet">ツイート</string>
-    <string name="reload">更新</string>
-    <string name="setting">設定</string>
-    <string name="javascript">JSの有効化</string>
-    <string name="homepage">ホーム</string>
-    <string name="homeUrl">ホームページのURLを入力</string>
-    <string name="home_list">ホームページ選択</string>
-    <string name="home_select">ホームページのURLの入力をする</string>
-    <string name="twitter_consumer_key">7rT6bJKiXPlsxpX9ro1QkbkOh</string>
-    <string name="twitter_consumer_secret">USPDeknjcOzxDxxDLb2leT5FGhNKGAPzVTsBCuBK9amPDcYWbl</string>
-    <string name="twitter_oauth">Twitter認証</string>
-    <string name="twitter_callback_url">hiyuki://twitter</string>
-    <string name="tweet_type">ツイート時の書式の変更</string>
-    <string name="tweet_up">urlの前に文字を入れる</string>
+	<string name="app_name">Web</string>
+	<string name="hello_world">Hello world!</string>
+	<string name="quit">終了</string>
+	<string name="Back">戻る</string>
+	<string name="Tweet">ツイート</string>
+	<string name="reload">更新</string>
+	<string name="setting">設定</string>
+	<string name="javascript">JSの有効化</string>
+	<string name="homepage">ホーム</string>
+	<string name="homeUrl">ホームページのURLを入力</string>
+	<string name="home_list">ホームページ選択</string>
+	<string name="home_select">ホームページのURLの入力をする</string>
+	<string name="twitter_consumer_key">7rT6bJKiXPlsxpX9ro1QkbkOh</string>
+	<string name="twitter_consumer_secret">USPDeknjcOzxDxxDLb2leT5FGhNKGAPzVTsBCuBK9amPDcYWbl</string>
+	<string name="twitter_oauth">Twitter認証</string>
+	<string name="twitter_callback_url">hiyuki://twitter</string>
+	<string name="tweet_type">ツイート時の書式の変更</string>
+	<string name="tweet_up">urlの前に文字を入れる</string>
+
 </resources>
