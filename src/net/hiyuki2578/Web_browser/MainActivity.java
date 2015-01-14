@@ -179,7 +179,7 @@ public class MainActivity extends Activity {
 		        }
 				showToast("ツイートします。");
 				String tweet_style = spf.getString("tweet_type","#watching");
-				tweet(webView.getUrl(),tweet_style);
+				tweet(webView.getUrl());
 				return true;
 			case R.id.home:
 				//home
@@ -258,8 +258,16 @@ public class MainActivity extends Activity {
 			ws.setDatabasePath(databaseDir.getPath());
 		}
 	}
-	private void tweet(String url, String style) {
+	private void tweet(String url) {
 		AsyncTask<String, Void, Boolean> task = new AsyncTask<String, Void, Boolean>() {
+			@Override
+			protected void onPostExecute(Boolean result) {
+				if (result) {
+					showToast("ツイートが完了しました！");
+				} else {
+					showToast("ツイートに失敗しました。。。");
+				}
+			}
 			@Override
 			protected Boolean doInBackground(String... params) {
 				try {
@@ -270,23 +278,15 @@ public class MainActivity extends Activity {
 					return false;
 				}
 			}
-			@Override
-			protected void onPostExecute(Boolean result) {
-				if (result) {
-					showToast("ツイートが完了しました！");
-				} else {
-					showToast("ツイートに失敗しました。。。");
-				}
-			}
 		};
 		SharedPreferences spf = PreferenceManager.getDefaultSharedPreferences(this);
 		boolean checkboxValue = spf.getBoolean("tweet", false);
 		if(checkboxValue==true){
-			task.execute(style+" "+url);
-			showToast("ツイート内容 :"+style+" "+url);
+			task.execute("見てるなう "+url);
+			showToast("ツイート内容 :"+"見てるなう "+url);
         }else{
-			task.execute(url+" "+style);
-			showToast("ツイート内容 :"+url+" "+style);
+			task.execute(url+" 見てるなう");
+			showToast("ツイート内容 :"+url+" 見てるなう");
 		}
 	}
 
